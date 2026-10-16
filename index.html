@@ -46,6 +46,8 @@ p { margin: 0 0 12px; }
 h3 { font-size: 17px; line-height: 1.4; font-weight: 600; margin: 0; }
 .role { display: block; font-size: 14px; color: var(--muted); margin: 2px 0 3px; }
 .experience p { font-size: 16px; margin: 0; }
+.experience .education-note { margin-top: 7px; color: var(--muted); font-size: 15px; }
+.education-note strong { color: var(--ink); font-weight: 600; }
 .publications { margin: 0; padding-left: 21px; }
 .publications li { padding-left: 4px; margin-bottom: 17px; }
 .publications li::marker { color: var(--muted); font-size: 13px; }
@@ -166,6 +168,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         <a href="#publications">Publications</a>
         <a href="#education">Education</a>
         <a href="#other">Other experience</a>
+        <a href="#awards">Awards</a>
         <a href="#code">Code</a>
       </nav>
     </header>
@@ -240,15 +243,15 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         <dl class="timeline">
           <div class="experience">
             <dt>Sep 2025 – present</dt>
-            <dd><h3>ETH Zürich</h3><p>MSc in Computer Science. Major in Machine Intelligence, minor in Data Management.</p></dd>
+            <dd><h3>ETH Zürich</h3><p>MSc in Computer Science. Major in Machine Intelligence, minor in Data Management.</p><p class="education-note">GPA: <strong>5.87/6.00</strong>.</p></dd>
           </div>
           <div class="experience">
-            <dt>Oct 2022 – Oct 2025</dt>
-            <dd><h3>Sant’Anna School of Advanced Studies</h3><p>Joint degree in Computer Engineering with the University of Pisa.</p></dd>
+            <dt>Oct 2022 – Dec 2025</dt>
+            <dd><h3>Sant’Anna School of Advanced Studies</h3><p>School of Excellence Diploma in Computer Engineering · Honors Student.</p><p class="education-note">GPA: <strong>30.0/30</strong> · Diploma: <strong>100/100 cum laude</strong>.<br>Full-tuition scholarship (€50,000).</p><p class="education-note">Student Representative for Engineering; President of the Orientation Commission.</p></dd>
           </div>
           <div class="experience">
             <dt>Sep 2022 – Jul 2025</dt>
-            <dd><h3>University of Pisa</h3><p>Bachelor of Engineering in Computer Engineering.</p></dd>
+            <dd><h3>University of Pisa</h3><p>Bachelor of Engineering in Computer Engineering.</p><p class="education-note">GPA: <strong>29.13/30</strong> · Degree: <strong>110/110 cum laude</strong>.<br>University of Pisa Excellence Medal for academic performance.</p></dd>
           </div>
         </dl>
       </section>
@@ -274,8 +277,16 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
           </div>
         </dl>
         <div class="notes">
-          <p>Selected participant, <a href="https://cmmrs.mpi-sws.org/">CMMRS</a> · Cornell, Maryland, Max Planck Pre-doctoral Research School, Saarbrücken, August 2026.</p>
           <p>Italian (native), English (Cambridge C2 certificate), French (conversational), German (basic).</p>
+        </div>
+      </section>
+      <section id="awards" aria-labelledby="awards-heading">
+        <h2 id="awards-heading">Academic activities &amp; awards</h2>
+        <div class="notes">
+          <p><a href="https://cmmrs.mpi-sws.org/">CMMRS</a> · Saarbrücken, August 2026. Selected participant in the Cornell, Maryland, Max Planck Pre-doctoral Research School; fully funded, with an acceptance rate below 10%.</p>
+          <p><strong>OECC/PSC 2025 · Sapporo.</strong> Student presenter, awarded a full-tuition scholarship to attend and present my work on the robustness of in-switch neural networks.</p>
+          <p>Listed in the <strong>Italian National Registry of Academic Excellence</strong>.</p>
+          <p><strong>First place, JEIOM Business Game · Modena, 2023.</strong> Designed a digital system for food and beverage distribution at large-scale events.</p>
         </div>
       </section>
       <section id="code" aria-labelledby="code-heading">
@@ -365,6 +376,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
   </script>
 </body>
 </html>
+
 
 
 

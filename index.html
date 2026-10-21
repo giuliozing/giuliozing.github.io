@@ -166,6 +166,12 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
   .abstract-toggle { display: none; }
   .paper-abstract { font-size: 10pt; }
 }
+.paper-statuses { border-top: 1px solid var(--line); margin-top: 27px; padding-top: 19px; }
+.paper-statuses h3 { font: 400 20px/1.3 'Source Serif 4', Georgia, serif; margin: 0 0 11px; }
+.paper-statuses ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.paper-statuses li { padding-left: 16px; border-left: 2px solid var(--line); }
+.paper-statuses .paper-title { display: block; font-size: 15px; font-weight: 600; }
+.paper-statuses .paper-meta { display: block; margin: 3px 0 0; }
   </style>
 </head>
 <body>
@@ -263,10 +269,10 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         </article>
         <article class="paper-card" aria-labelledby="title-eucnc">
           <figure class="paper-figure">
-            <a href="assets/papers/eucnc.webp" target="_blank" rel="noopener" aria-label="View figure: Adversarial training under attack (opens in a new tab)">
-              <img src="assets/papers/eucnc.webp" alt="Accuracy under an Elastic-Net Adaptive Attack, comparing the base model with adversarial training." width="1200" height="604" loading="lazy" decoding="async">
+            <a href="assets/papers/eucnc-setup.svg" target="_blank" rel="noopener" aria-label="View diagram: In-switch detection setup (opens in a new tab)">
+              <img src="assets/papers/eucnc-setup.svg" alt="Diagram of TCP packet features entering a P4 switch with parallel attack and adversarial detectors combined into one decision." width="800" height="560" loading="lazy" decoding="async">
             </a>
-            <figcaption>Adversarial training under attack</figcaption>
+            <figcaption>In-switch detection setup</figcaption>
           </figure>
           <div class="paper-details">
             <p class="paper-meta">EuCNC 2026 · Málaga, Spain</p>
@@ -280,10 +286,10 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         </article>
         <article class="paper-card" aria-labelledby="title-oecc">
           <figure class="paper-figure">
-            <a href="assets/papers/oecc.webp" target="_blank" rel="noopener" aria-label="View figure: Quantization and adversarial robustness (opens in a new tab)">
-              <img src="assets/papers/oecc.webp" alt="Accuracy under an Elastic-Net Adaptive Attack for neural networks quantized to 8, 6, 4 and 2 bits." width="1200" height="604" loading="lazy" decoding="async">
+            <a href="assets/papers/oecc-setup.svg" target="_blank" rel="noopener" aria-label="View diagram: Robustness evaluation setup (opens in a new tab)">
+              <img src="assets/papers/oecc-setup.svg" alt="Diagram of 5G-NIDD packet features evaluated with a full-precision neural network and a quantized LUT model under adversarial perturbations." width="800" height="560" loading="lazy" decoding="async">
             </a>
-            <figcaption>Quantization and adversarial robustness</figcaption>
+            <figcaption>Robustness evaluation setup</figcaption>
           </figure>
           <div class="paper-details">
             <p class="paper-meta">OECC/PSC 2025 · Sapporo, Japan</p>
@@ -295,6 +301,14 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
             <div class="paper-links"><a href="https://doi.org/10.23919/oecc/psc62146.2025.11111457">Paper ↗</a><a href="https://github.com/giuliozing/inswitch-nids-adversarial-robustness">Code ↗</a></div>
           </div>
         </article>
+        </div>
+        <div class="paper-statuses" aria-label="Other papers">
+          <h3>Other papers</h3>
+          <ul>
+            <li><span class="paper-title">Robust In-Switch Neural Networks Against Adversarial DDoS Attacks</span><span class="paper-meta">Journal of Network and Computer Applications · Under review</span></li>
+            <li><span class="paper-title">One paper under review at ICLR 2027</span></li>
+            <li><span class="paper-title">Composable Wire-Speed ML through LUT-Distilled Model Fusion in Programmable Packet-Optical Nodes</span><span class="paper-meta">OFC · Submitted</span></li>
+          </ul>
         </div>
       </section>
 

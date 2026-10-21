@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">Robustness evaluation setup</title>
+  <desc id="desc">Traffic from 5G-NIDD is processed into packet features, which are evaluated with a full-precision neural network and a quantized lookup-table model under adversarial attacks.</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M1 1 7 4.5 1 8" fill="none" stroke="#36766c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <rect width="800" height="560" rx="18" fill="#f6f7f3"/>
+  <text x="44" y="67" fill="#1c4039" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Testing in-switch models</text>
+  <text x="44" y="101" fill="#62766d" font-family="Arial, sans-serif" font-size="16">OECC/PSC 2025 · evaluation setup</text>
+  <rect x="50" y="176" width="198" height="78" rx="10" fill="#e7ede7" stroke="#a2bdb1" stroke-width="2"/>
+  <text x="149" y="208" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="19">5G-NIDD traffic</text>
+  <text x="149" y="234" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">packet features</text>
+  <path d="M249 215H306" stroke="#36766c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="315" y="176" width="169" height="78" rx="10" fill="#f1eee5" stroke="#c4b897" stroke-width="2"/>
+  <text x="399.5" y="207" text-anchor="middle" fill="#5c5435" font-family="Arial, sans-serif" font-size="18">Adversarial</text>
+  <text x="399.5" y="234" text-anchor="middle" fill="#776d4d" font-family="Arial, sans-serif" font-size="15">perturbations</text>
+  <path d="M485 215H540V361" stroke="#36766c" stroke-width="3" fill="none"/>
+  <path d="M540 215H560" stroke="#36766c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M540 361H560" stroke="#36766c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="568" y="167" width="192" height="95" rx="10" fill="#eaf1ed" stroke="#8eaea0" stroke-width="2"/>
+  <text x="664" y="201" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="18">Full-precision</text>
+  <text x="664" y="228" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">neural network</text>
+  <rect x="568" y="314" width="192" height="95" rx="10" fill="#eaf1ed" stroke="#8eaea0" stroke-width="2"/>
+  <text x="664" y="349" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="18">Quantized DNN</text>
+  <text x="664" y="377" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">LUT deployment</text>
+  <text x="50" y="475" fill="#21473c" font-family="Arial, sans-serif" font-size="17">Compare robustness under EAD and Boundary attacks</text>
+  <text x="50" y="507" fill="#62766d" font-family="Arial, sans-serif" font-size="15">Diagram based on the published paper and its reproduction code.</text>
+</svg>

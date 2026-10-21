@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">In-switch adversarial DDoS detection</title>
+  <desc id="desc">TCP packet features enter a programmable switch, where the attack and adversarial detectors run in parallel as lookup tables. Their outputs are combined for a decision.</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M1 1 7 4.5 1 8" fill="none" stroke="#36766c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <rect width="800" height="560" rx="18" fill="#f6f7f3"/>
+  <text x="44" y="67" fill="#1c4039" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Detection inside the switch</text>
+  <text x="44" y="101" fill="#62766d" font-family="Arial, sans-serif" font-size="16">EuCNC 2026 · system overview</text>
+  <rect x="48" y="238" width="133" height="90" rx="10" fill="#e7ede7" stroke="#a2bdb1" stroke-width="2"/>
+  <text x="114.5" y="276" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="20">TCP packet</text>
+  <text x="114.5" y="303" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">4 features</text>
+  <path d="M182 283H237" stroke="#36766c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="244" y="151" width="350" height="292" rx="18" fill="#fff" stroke="#a7bfb3" stroke-width="2"/>
+  <text x="419" y="191" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="20" font-weight="bold">P4 / Intel Tofino switch</text>
+  <rect x="268" y="222" width="302" height="72" rx="9" fill="#eaf1ed" stroke="#8eaea0"/>
+  <text x="419" y="251" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="18">Attack detector</text>
+  <text x="419" y="276" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">LUT-distilled DNN</text>
+  <rect x="268" y="309" width="302" height="72" rx="9" fill="#f1eee5" stroke="#c4b897"/>
+  <text x="419" y="338" text-anchor="middle" fill="#5c5435" font-family="Arial, sans-serif" font-size="18">Adversarial detector</text>
+  <text x="419" y="363" text-anchor="middle" fill="#776d4d" font-family="Arial, sans-serif" font-size="15">LUT-distilled DNN</text>
+  <text x="419" y="414" text-anchor="middle" fill="#526e62" font-family="Arial, sans-serif" font-size="16">Parallel outputs · logical OR</text>
+  <path d="M596 283H651" stroke="#36766c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="657" y="238" width="103" height="90" rx="10" fill="#e7ede7" stroke="#a2bdb1" stroke-width="2"/>
+  <text x="708.5" y="277" text-anchor="middle" fill="#21473c" font-family="Arial, sans-serif" font-size="18">DDoS</text>
+  <text x="708.5" y="302" text-anchor="middle" fill="#527266" font-family="Arial, sans-serif" font-size="15">decision</text>
+  <text x="48" y="507" fill="#62766d" font-family="Arial, sans-serif" font-size="15">Diagram based on the published paper and its reproduction code.</text>
+</svg>

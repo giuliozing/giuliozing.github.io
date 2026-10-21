@@ -134,6 +134,38 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
 }
 .aside-note { font-size: 14px; font-weight: 400; color: var(--muted); }
 
+
+/* Public papers: figure, short abstract and direct links. */
+.paper-list { display: grid; gap: 22px; }
+.paper-card { display: grid; grid-template-columns: 198px minmax(0, 1fr); gap: 24px; padding: 22px; border: 1px solid var(--line); border-radius: 5px; background: rgba(255,255,255,.35); }
+.paper-figure { margin: 3px 0 0; align-self: start; }
+.paper-figure a { display: grid; place-items: center; min-height: 150px; background: white; border: 1px solid #e4e7e1; border-radius: 3px; padding: 7px; }
+.paper-figure img { display: block; width: 100%; height: auto; max-height: 190px; object-fit: contain; }
+.paper-figure figcaption { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.paper-details { min-width: 0; }
+.paper-card .paper-meta { margin: 0 0 6px; font-size: 12px; }
+.paper-card .paper-title { font-size: 18px; line-height: 1.35; }
+.paper-title a { color: var(--ink); text-decoration: none; }
+.paper-title a:hover { color: var(--link); text-decoration: underline; }
+.paper-card .authors { font-size: 12px; line-height: 1.5; margin: 7px 0 12px; }
+.abstract-label { color: var(--muted); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 3px; }
+.paper-abstract { font-size: 14px; line-height: 1.55; margin: 0; }
+.paper-abstract.is-clamped { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
+.abstract-toggle { display: block; border: 0; background: none; color: var(--link); padding: 4px 0; font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; font-size: 13px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 640px) {
+  .paper-card { grid-template-columns: 1fr; gap: 15px; padding: 18px; }
+  .paper-figure a { min-height: 0; height: 175px; }
+  .paper-figure img { height: 100%; max-height: 159px; }
+  .paper-card .paper-title { font-size: 18px; }
+}
+@media print {
+  .paper-card { break-inside: avoid; grid-template-columns: 130px minmax(0,1fr); gap: 15px; padding: 12px; }
+  .paper-abstract.is-clamped { display: block; overflow: visible; }
+  .abstract-toggle { display: none; }
+  .paper-abstract { font-size: 10pt; }
+}
   </style>
 </head>
 <body>
@@ -165,11 +197,11 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
       </div>
       <nav aria-label="Main navigation">
         <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
         <a href="#education">Education</a>
         <a href="#other">Other experience</a>
         <a href="#awards">Awards</a>
         <a href="#code">Code</a>
+        <a href="#publications">Publications</a>
       </nav>
     </header>
     <main>
@@ -208,35 +240,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         </dl>
       </section>
 
-      <section id="publications" aria-labelledby="publications-heading">
-        <h2 id="publications-heading">Publications</h2>
-        <ol class="publications">
-          <li>
-            <div class="paper-title">Securing Computer-Use Agents Against Branch Steering Attacks</div>
-            <div class="authors">G. Zingrillo, H. Foerster, I. Shumailov, Y. Zhao, R. Mullins</div>
-            <div class="paper-meta">Agents in the Wild Workshop @ NeurIPS 2026 · Accepted <a href="https://arxiv.org/abs/2610.03089">Preprint</a> <a href="https://github.com/giuliozing/securing-cuas-against-branch-steering">Code</a></div>
-          </li>
-          <li>
-            <div class="paper-title">Robust In-Switch Neural Networks Against Adversarial DDoS Attacks</div>
-            <div class="paper-meta">Journal of Network and Computer Applications · Under review</div>
-          </li>
-          <li>
-            <div class="paper-title">DDoS Adversarial Attacks Detection with Deep Neural Networks in P4 Programmable Switches</div>
-            <div class="paper-meta">EuCNC 2026 · Málaga, Spain <a href="https://doi.org/10.1109/eucnc/6gsummit68295.2026.11577367">Paper</a> <a href="https://github.com/giuliozing/p4-adversarial-ddos-detector">Code</a></div>
-          </li>
-          <li>
-            <div class="paper-title">Assessing the Robustness of In-Switch Neural Networks Against Adversarial DDoS Attacks</div>
-            <div class="paper-meta">OECC/PSC 2025 · Sapporo, Japan <a href="https://doi.org/10.23919/oecc/psc62146.2025.11111457">Paper</a> <a href="https://github.com/giuliozing/inswitch-nids-adversarial-robustness">Code</a></div>
-          </li>
-          <li>
-            <div class="paper-title">One paper under review at ICLR 2027</div>
-          </li>
-        </ol>
-      </section>
-
-
-
-      <section id="service" aria-labelledby="service-heading">
+<section id="service" aria-labelledby="service-heading">
         <h2 id="service-heading">Academic service</h2>
         <p>Peer reviewer for the <em>Computer Networks</em> journal and the IFIP Networking Conference.</p>
       </section>
@@ -300,6 +304,62 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
           <li><a href="https://github.com/giuliozing/inswitch-nids-adversarial-robustness">Robustness of in-switch neural networks</a><p><strong>CNIT &amp; Scuola Superiore Sant’Anna · Research internship.</strong> Reproduction code for the OECC/PSC 2025 paper on in-switch neural network robustness.</p></li>
           <li><a href="https://github.com/giuliozing/cnit-internship-inswitch-nids">In-switch intrusion detection</a><p><strong>CNIT · Research internship, Jan–Jul 2025.</strong> Full pipeline developed in collaboration with Scuola Superiore Sant’Anna.</p></li>
         </ul>
+      </section>
+      <section id="publications" aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        <div class="paper-list">
+        <article class="paper-card" aria-labelledby="title-cobra">
+          <figure class="paper-figure">
+            <a href="assets/papers/cobra.webp" target="_blank" rel="noopener" aria-label="View figure: The COBRA architecture (opens in a new tab)">
+              <img src="assets/papers/cobra.webp" alt="COBRA architecture: committed planning, branch resolution and deterministic enforcement proxies." width="848" height="712" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The COBRA architecture</figcaption>
+          </figure>
+          <div class="paper-details">
+            <p class="paper-meta">Agents in the Wild Workshop @ NeurIPS 2026 · Accepted</p>
+            <h3 class="paper-title" id="title-cobra"><a href="https://arxiv.org/abs/2610.03089">Securing Computer-Use Agents Against Branch Steering Attacks</a></h3>
+            <p class="authors">G. Zingrillo, H. Foerster, I. Shumailov, Y. Zhao, R. Mullins</p>
+            <p class="abstract-label">Abstract summary</p>
+            <p class="paper-abstract" id="abstract-cobra">Computer-use agents can be redirected by untrusted page content and tool responses even when execution follows an approved plan. This work studies branch steering as a data-flow integrity problem, introduces STEER-Bench to measure it, and presents COBRA: an architecture that constrains what each trusted branch may do across graphical and MCP interactions. The evaluation examines security, benign-task utility and the practical costs of enforcing these constraints.</p>
+            <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-cobra" hidden>Read more<span class="sr-only"> about Securing Computer-Use Agents Against Branch Steering Attacks</span></button>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2610.03089">Preprint ↗</a><a href="https://github.com/giuliozing/securing-cuas-against-branch-steering">Code ↗</a></div>
+          </div>
+        </article>
+        <article class="paper-card" aria-labelledby="title-eucnc">
+          <figure class="paper-figure">
+            <a href="assets/papers/eucnc.webp" target="_blank" rel="noopener" aria-label="View figure: Adversarial training under attack (opens in a new tab)">
+              <img src="assets/papers/eucnc.webp" alt="Accuracy under an Elastic-Net Adaptive Attack, comparing the base model with adversarial training." width="1200" height="604" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Adversarial training under attack</figcaption>
+          </figure>
+          <div class="paper-details">
+            <p class="paper-meta">EuCNC 2026 · Málaga, Spain</p>
+            <h3 class="paper-title" id="title-eucnc"><a href="https://doi.org/10.1109/eucnc/6gsummit68295.2026.11577367">DDoS Adversarial Attacks Detection with Deep Neural Networks in P4 Programmable Switches</a></h3>
+            <p class="authors">G. Zingrillo, L. Ismail, E. Paolini, F. Paolucci, F. Cugini, L. De Marinis</p>
+            <p class="abstract-label">Abstract summary</p>
+            <p class="paper-abstract" id="abstract-eucnc">Running neural intrusion detection directly in programmable switches offers low-latency protection, but adversarially modified traffic can undermine its predictions. This work adds an adversarial detector alongside the primary DDoS classifier, distils both models into lookup tables, and executes them together on an Intel Tofino switch. Experiments on Edge-IIoTset examine white-, grey- and black-box attacks and compare the hardware implementation with its software reference.</p>
+            <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-eucnc" hidden>Read more<span class="sr-only"> about DDoS Adversarial Attacks Detection with Deep Neural Networks in P4 Programmable Switches</span></button>
+            <div class="paper-links"><a href="https://doi.org/10.1109/eucnc/6gsummit68295.2026.11577367">Paper ↗</a><a href="https://github.com/giuliozing/p4-adversarial-ddos-detector">Code ↗</a></div>
+          </div>
+        </article>
+        <article class="paper-card" aria-labelledby="title-oecc">
+          <figure class="paper-figure">
+            <a href="assets/papers/oecc.webp" target="_blank" rel="noopener" aria-label="View figure: Quantization and adversarial robustness (opens in a new tab)">
+              <img src="assets/papers/oecc.webp" alt="Accuracy under an Elastic-Net Adaptive Attack for neural networks quantized to 8, 6, 4 and 2 bits." width="1200" height="604" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Quantization and adversarial robustness</figcaption>
+          </figure>
+          <div class="paper-details">
+            <p class="paper-meta">OECC/PSC 2025 · Sapporo, Japan</p>
+            <h3 class="paper-title" id="title-oecc"><a href="https://doi.org/10.23919/oecc/psc62146.2025.11111457">Assessing the Robustness of In-Switch Neural Networks Against Adversarial DDoS Attacks</a></h3>
+            <p class="authors">G. Zingrillo, E. Paolini, N. Andriolli, F. Paolucci, F. Cugini, G. Contestabile, P. Castoldi, L. De Marinis</p>
+            <p class="abstract-label">Abstract summary</p>
+            <p class="paper-abstract" id="abstract-oecc">This study examines how neural intrusion detectors behave under adversarial traffic once they are deployed in programmable network switches. It compares full-precision models with lookup-table implementations based on integer quantization, using both gradient-based and decision-based attacks. The experiments show that the quantization needed for switch deployment can also improve resilience to these perturbations.</p>
+            <button class="abstract-toggle" type="button" aria-expanded="false" aria-controls="abstract-oecc" hidden>Read more<span class="sr-only"> about Assessing the Robustness of In-Switch Neural Networks Against Adversarial DDoS Attacks</span></button>
+            <div class="paper-links"><a href="https://doi.org/10.23919/oecc/psc62146.2025.11111457">Paper ↗</a><a href="https://github.com/giuliozing/inswitch-nids-adversarial-robustness">Code ↗</a></div>
+          </div>
+        </article>
+        </div>
       </section>
     </main>
     <footer>
@@ -376,11 +436,22 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
   } catch (_) { close(); }
 })();
 
+
+(() => {
+  document.querySelectorAll('.abstract-toggle').forEach(button => {
+    const abstract = document.getElementById(button.getAttribute('aria-controls'));
+    if (!abstract) return;
+    abstract.classList.add('is-clamped');
+    button.hidden = false;
+    const title = button.querySelector('.sr-only');
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(expanded));
+      abstract.classList.toggle('is-clamped', !expanded);
+      button.firstChild.textContent = expanded ? 'Show less' : 'Read more';
+    });
+  });
+})();
   </script>
 </body>
 </html>
-
-
-
-
-

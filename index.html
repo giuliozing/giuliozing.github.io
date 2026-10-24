@@ -59,6 +59,7 @@ h3 { font-size: 17px; line-height: 1.4; font-weight: 600; margin: 0; }
 .code-list p { color: var(--muted); font-size: 14px; margin: 1px 0 0; }
 .notes { font-size: 15px; }
 .notes p { margin-bottom: 9px; }
+.languages h3 { margin-bottom: 4px; }
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; border-top: 1px solid var(--line); margin-top: 32px; padding-top: 17px; font-size: 13px; color: var(--muted); }
 .opening { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; background: #142f2b; color: #f2f0e8; opacity: 1; transition: opacity .4s ease; }
 .opening.is-leaving { opacity: 0; pointer-events: none; }
@@ -166,10 +167,13 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
   .abstract-toggle { display: none; }
   .paper-abstract { font-size: 10pt; }
 }
-.paper-statuses { list-style: none; padding: 19px 0 0; margin: 27px 0 0; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.paper-statuses { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 .paper-statuses li { padding-left: 16px; border-left: 2px solid var(--line); }
 .paper-statuses .paper-title { display: block; font-size: 15px; font-weight: 600; }
 .paper-statuses .paper-meta { display: block; margin: 3px 0 0; }
+.reference-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.reference-list li { font-size: 16px; }
+.reference-list span { display: block; color: var(--muted); font-size: 14px; }
   </style>
 </head>
 <body>
@@ -300,7 +304,11 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
           </div>
         </article>
         </div>
-        <ul class="paper-statuses" aria-label="Papers under review">
+      </section>
+
+      <section id="under-review" aria-labelledby="under-review-heading">
+        <h2 id="under-review-heading">Papers under review</h2>
+        <ul class="paper-statuses">
             <li><span class="paper-title">Robust In-Switch Neural Networks Against Adversarial DDoS Attacks</span><span class="paper-meta">Journal of Network and Computer Applications · Under review</span></li>
             <li><span class="paper-title">One paper under review at ICLR 2027</span></li>
             <li><span class="paper-title">Composable Wire-Speed ML through LUT-Distilled Model Fusion in Programmable Packet-Optical Nodes</span><span class="paper-meta">Optical Fiber Communication Conference and Exposition (OFC) · Under review</span></li>
@@ -312,7 +320,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
         <dl class="timeline">
           <div class="experience">
             <dt>Sep 2025 – present</dt>
-            <dd><h3>ETH Zürich</h3><p>MSc in Computer Science. Major in Machine Intelligence, minor in Data Management.</p></dd>
+            <dd><h3>ETH Zürich</h3><p>MSc in Computer Science. Major in Machine Intelligence, minor in Data Management.</p><p class="education-note">GPA: <strong>5.87/6.00</strong>.</p></dd>
           </div>
           <div class="experience">
             <dt>Oct 2022 – Dec 2025</dt>
@@ -350,7 +358,8 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
             <dd><h3>Liceo Scientifico Cavour, Rome</h3><span class="role">Web Development Teacher</span></dd>
           </div>
         </dl>
-        <div class="notes">
+        <div class="notes languages">
+          <h3>Languages</h3>
           <p>Italian (native), English (Cambridge C2 certificate), French (conversational), German (basic).</p>
         </div>
       </section>
@@ -372,6 +381,15 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8p
           <li><a href="https://github.com/giuliozing/p4-adversarial-ddos-detector">Adversarial DDoS detection in P4</a><p><strong>CNIT &amp; Scuola Superiore Sant’Anna · Research internship.</strong> Reproduction code for the EuCNC 2026 paper on adversarial DDoS detection.</p></li>
           <li><a href="https://github.com/giuliozing/inswitch-nids-adversarial-robustness">Robustness of in-switch neural networks</a><p><strong>CNIT &amp; Scuola Superiore Sant’Anna · Research internship.</strong> Reproduction code for the OECC/PSC 2025 paper on in-switch neural network robustness.</p></li>
           <li><a href="https://github.com/giuliozing/cnit-internship-inswitch-nids">In-switch intrusion detection</a><p><strong>CNIT · Research internship, Jan–Jul 2025.</strong> Full pipeline developed in collaboration with Scuola Superiore Sant’Anna.</p></li>
+        </ul>
+      </section>
+
+      <section id="references" aria-labelledby="references-heading">
+        <h2 id="references-heading">References for PhD applications</h2>
+        <ul class="reference-list">
+          <li>Prof. Robert Mullins<span>University of Cambridge</span></li>
+          <li>Dr. Pierfrancesco Beneventano<span>Massachusetts Institute of Technology</span></li>
+          <li>Dr. Ghislain Fourny<span>ETH Zürich</span></li>
         </ul>
       </section>
     </main>
